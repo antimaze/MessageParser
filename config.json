@@ -1,0 +1,7 @@
+{
+	"spreadsheet_id"		: "1vPTx7N5cxqxNy8SBE93KfjjK4yK9Uzl2gfiEDqBTeqQ",
+	"name_range"			: "Sheet1!B1:AL1",
+	"date_range"			: "Sheet2!A1",
+	"credentials_file_path"	: "C:\Users\Savan\eclipse-workspace\whatsapp/credentials.json",
+	"message_file_path"		: "C:\Users\Savan\eclipse-workspace\whatsapp/msg.txt"
+}
