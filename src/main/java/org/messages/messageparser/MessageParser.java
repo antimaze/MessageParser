@@ -4,7 +4,7 @@ package org.messages.messageparser;
 import java.io.File;
 import java.io.FileNotFoundException;
 
-import org.whatsapp.messagemodel.MessageDocument;
+import org.messages.messagemodel.MessageDocument;
 
 public class MessageParser extends BaseParser
 {

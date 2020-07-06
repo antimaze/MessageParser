@@ -15,9 +15,9 @@ import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
-import org.whatsapp.messagemodel.Message;
-import org.whatsapp.messagemodel.MessageDate;
-import org.whatsapp.messagemodel.MessageDocument;
+import org.messages.messagemodel.Message;
+import org.messages.messagemodel.MessageDate;
+import org.messages.messagemodel.MessageDocument;
 
 import com.google.api.client.auth.oauth2.Credential;
 import com.google.api.client.extensions.java6.auth.oauth2.AuthorizationCodeInstalledApp;

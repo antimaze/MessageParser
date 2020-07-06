@@ -3,9 +3,9 @@ package org.messages.messageparser;
 import java.io.IOException;
 import java.util.ArrayList;
 
-import org.whatsapp.messagemodel.Message;
-import org.whatsapp.messagemodel.MessageDate;
-import org.whatsapp.messagemodel.MessageDocument;
+import org.messages.messagemodel.Message;
+import org.messages.messagemodel.MessageDate;
+import org.messages.messagemodel.MessageDocument;
 
 
 

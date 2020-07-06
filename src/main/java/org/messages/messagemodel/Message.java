@@ -1,4 +1,4 @@
-package org.whatsapp.messagemodel;
+package org.messages.messagemodel;
 
 public class Message {
 

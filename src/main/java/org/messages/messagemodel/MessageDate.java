@@ -1,4 +1,4 @@
-package org.whatsapp.messagemodel;
+package org.messages.messagemodel;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;

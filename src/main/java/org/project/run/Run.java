@@ -1,4 +1,4 @@
-package org.whatsapp.run;
+package org.project.run;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -7,7 +7,7 @@ import java.security.GeneralSecurityException;
 
 import org.googlesheet.operations.GoogleSheetUpdater;
 import org.json.simple.parser.ParseException;
-import org.whatsapp.messagemodel.MessageDocument;
+import org.messages.messagemodel.MessageDocument;
 
 public class Run {
 

@@ -1,4 +1,4 @@
-package org.whatsapp.messagemodel;
+package org.messages.messagemodel;
 
 import java.io.File;
 import java.io.FileNotFoundException;
