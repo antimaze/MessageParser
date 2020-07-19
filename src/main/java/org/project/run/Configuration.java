@@ -63,6 +63,7 @@ public class Configuration {
         credentialFile = new File(credentialFilePath);
         if(!credentialFile.exists())
         {
+        	System.out.println(credentialFile.getAbsolutePath());
         	System.out.println("Credentials file does not exist...");
         	System.exit(1);
         }

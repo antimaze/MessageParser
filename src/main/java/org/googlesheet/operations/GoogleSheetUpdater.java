@@ -228,7 +228,7 @@ public class GoogleSheetUpdater {
 		{
 			Message message = parsedMessages.get(i);
 			String name = message.getName();
-			int total = message.getTo() - message.getFrom() + 1;
+			int total = message.getTotalStoriesRead();
 			String messageDate = message.getDate().getDay() + "-" + message.getDate().getMonthString();
 			
 			int[] rowData = googleSheetData.get(messageDate);
@@ -240,8 +240,10 @@ public class GoogleSheetUpdater {
 			}
 			else
 			{
-				System.out.println("Person dones not exist in google sheet with this name: " + name);
-				System.out.println(name + " Part: " + message.getPartNum() + " From: " + message.getFrom() + " To: " + message.getTo());
+				System.out.println("-----------------------------------------------------------------------");
+				System.out.println("Person does not exist in google sheet with this name: " + name + "\n\n");
+				System.out.println(message.getMessageBody());
+				System.out.println("-----------------------------------------------------------------------");
 				personNotPresentInGoogleSheet.add(message);
 			}
 		}

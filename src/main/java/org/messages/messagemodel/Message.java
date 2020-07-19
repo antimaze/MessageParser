@@ -1,26 +1,64 @@
 package org.messages.messagemodel;
 
+import java.util.List;
+
 public class Message {
 
 	private MessageDate date;
 	private String name;
-	private int partNum;
-	private int from;
-	private int to;
 	private String messageBody;
 	private boolean isParsed;
 	
-	public Message(MessageDate date, String name, int partNum, int from, int to, String messageBody, boolean isParsed) 
-	{
-		this.date = date;
-		this.name = name;
-		this.partNum = partNum;
-		this.from = from;
-		this.to = to;
-		this.messageBody = messageBody;
-		this.isParsed = isParsed;
-	}
+	List<StoryData> storiesData;
 	
+	private int totalStoriesRead;
+	
+	public Message(MessageDate date, String name, List<StoryData> storiesData, String messageBody) 
+	{
+		this.date 			= date;
+		this.name 			= name;
+		this.storiesData 	= storiesData;
+		this.messageBody 	= messageBody;
+		
+		checkParsed(this.storiesData);
+		updateTotalStoriesRead(this.storiesData);
+	}
+
+	private void updateTotalStoriesRead(List<StoryData> storiesData)
+	{
+		if(isParsed)
+		{
+			for(StoryData storyData: storiesData)
+			{
+				if(storyData.isValid())
+				{
+					totalStoriesRead += storyData.getTo() - storyData.getFrom() + 1;
+				}
+			}
+		}
+	}
+
+	private void checkParsed(List<StoryData> storiesData)
+	{
+		if(!storiesData.isEmpty())
+		{
+			for(StoryData storyData: storiesData)
+			{
+				if(!storyData.isValid())
+				{
+					isParsed = false;
+					return;
+				}
+			}
+			
+			isParsed = true;
+		}
+		else
+		{
+			isParsed = false;
+		}
+	}
+
 	public MessageDate getDate() {
 		return date;
 	}
@@ -41,31 +79,6 @@ public class Message {
 	public void setName(String name) {
 		this.name = name;
 	}
-
-	public int getPartNum() {
-		return partNum;
-	}
-
-	public void setPartNum(int partNum) {
-		this.partNum = partNum;
-	}
-
-	public int getFrom() {
-		return from;
-	}
-
-	public void setFrom(int from) {
-		this.from = from;
-	}
-
-	public int getTo() {
-		return to;
-	}
-
-	public void setTo(int to) {
-		this.to = to;
-	}
-
 	public String getMessageBody() {
 		return messageBody;
 	}
@@ -78,7 +91,19 @@ public class Message {
 		return isParsed;
 	}
 
-	public void setParsed(boolean isParsed) {
-		this.isParsed = isParsed;
+	public List<StoryData> getStoriesData() {
+		return storiesData;
+	}
+
+	public void setStoriesData(List<StoryData> storiesData) {
+		this.storiesData = storiesData;
+	}
+
+	public int getTotalStoriesRead() {
+		return totalStoriesRead;
+	}
+
+	public void setTotalStoriesRead(int totalStoriesRead) {
+		this.totalStoriesRead = totalStoriesRead;
 	}
 }
